@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import Features from './components/Features';
 import SplashScreen from './components/SplashScreen';
+import History from './components/History';
 import './App.css';
 
 const Editor = lazy(() => import('./components/Editor'));
@@ -14,6 +15,7 @@ const Editor = lazy(() => import('./components/Editor'));
 function App() {
   const [image, setImage] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [isHistoryOpen, setIsHistoryOpen] = useState(false);
 
   return (
     <>
@@ -48,7 +50,7 @@ function App() {
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 blur-[120px] rounded-full pointer-events-none animate-pulse" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/10 blur-[120px] rounded-full pointer-events-none" />
 
-        <Navbar />
+        <Navbar onOpenHistory={() => setIsHistoryOpen(true)} />
 
         {/* Main Content */}
         <main className="relative z-10 pt-10 pb-20">
@@ -72,6 +74,9 @@ function App() {
         </main>
 
         <Footer />
+        
+        {/* Global Overlays */}
+        <History isOpen={isHistoryOpen} onClose={() => setIsHistoryOpen(false)} />
       </div>
     </>
   );

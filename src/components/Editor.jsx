@@ -5,6 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import EditorLoader from './EditorLoader';
 import EditorPreview from './EditorPreview';
 import EditorControls from './EditorControls';
+import { saveToHistory } from '../utils/history';
 
 const Editor = ({ image, onReset }) => {
   const [originalUrl, setOriginalUrl] = useState(null);
@@ -83,10 +84,14 @@ const Editor = ({ image, onReset }) => {
   }, [processedUrl, bgColor, bgImage, bgBlur]);
 
   const triggerDownload = (canvas) => {
+    const imageData = canvas.toDataURL('image/png');
     const link = document.createElement('a');
     link.download = 'removed-bg.png';
-    link.href = canvas.toDataURL('image/png');
+    link.href = imageData;
     link.click();
+    
+    // Save to local history
+    saveToHistory(imageData);
   };
 
   const handleBgUpload = (e) => {
