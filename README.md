@@ -10,8 +10,10 @@ CLEARBG is a premium, AI-powered web application that allows users to remove bac
 - **🔒 Private & Secure**: Your images never leave your device. Everything is processed locally.
 - **🎨 Custom Backgrounds**: Replace transparent backgrounds with solid colors or custom images.
 - **💧 Blur Effects**: Add professional depth-of-field effects to your background.
-- **📱 Fully Responsive**: A seamless experience across mobile, tablet, and desktop.
-- **✨ HD Quality**: Export high-resolution transparent PNGs.
+- **📁 Local History**: Automatically save your downloaded images to a local, private gallery accessible globally from the Navbar.
+- **✨ Premium UI/UX**: Includes animated splash screens, a global sliding history drawer, and a dedicated 404 page for a seamless user experience.
+- **📱 Fully Responsive**: A beautiful experience across mobile, tablet, and desktop.
+- **🖼️ HD Quality**: Export high-resolution transparent PNGs.
 
 ## 🛠️ Tech Stack
 
